@@ -19,7 +19,8 @@ class Graph:
 
     def bft(self, start_index):
         queue_front = [start_index]
-        visited = set()
+        # visited = set()
+        visited = []
 
         while len(queue_front) > 0:
             current = queue_front[0]
@@ -27,8 +28,27 @@ class Graph:
             if current in visited:
                 continue
             else:
-                visited.add(current)
+                # visited.add(current)
+                visited.append(current)
                 queue_front.extend(self.vertices[current])
+            # print(visited)
+
+        return visited
+
+    def dft(self, start_index):
+        stack_top = [start_index]
+        # visited = set()
+        visited = []
+
+        while len(stack_top) > 0:
+            current = stack_top.pop()
+            if current in visited:
+                continue
+            else:
+                # visited.add(current)
+                visited.append(current)
+                stack_top.extend(self.vertices[current])
+            # print(visited)
 
         return visited
 
@@ -58,3 +78,4 @@ g.add_edge(5, 4)
 # print(g)
 
 print(g.bft(1))
+print(g.dft(1))
