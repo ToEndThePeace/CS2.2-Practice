@@ -38,7 +38,7 @@ class Graph:
     def dft(self, start_index):
         stack_top = [start_index]
         # visited = set()
-        visited = []
+        visited = [] 
 
         while len(stack_top) > 0:
             current = stack_top.pop()
