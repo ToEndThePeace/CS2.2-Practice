@@ -38,7 +38,7 @@ class Graph:
     def dft(self, start_index):
         stack_top = [start_index]
         # visited = set()
-        visited = [] 
+        visited = []
 
         while len(stack_top) > 0:
             current = stack_top.pop()
@@ -51,6 +51,11 @@ class Graph:
             # print(visited)
 
         return visited
+
+    def count_connected_components(self):
+        count = 0
+
+        return count
 
 
 """
@@ -77,5 +82,5 @@ g.add_edge(5, 4)
 
 # print(g)
 
-print(g.bft(1))
-print(g.dft(1))
+# print(g.bft(1))
+# print(g.dft(1))
